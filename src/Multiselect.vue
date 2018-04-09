@@ -42,7 +42,6 @@
           type="text"
           autocomplete="off"
           :placeholder="placeholder"
-          :style="inputStyle"
           :value="search"
           :disabled="disabled"
           :tabindex="tabindex"
@@ -305,12 +304,6 @@
         return this.showLabels
           ? this.selectedLabel
           : ''
-      },
-      inputStyle () {
-        if (this.multiple && this.value && this.value.length) {
-          // Hide input by setting the width to 0 allowing it to receive focus
-          return this.isOpen ? { 'width': 'auto' } : { 'width': '0', 'position': 'absolute', 'padding': '0' }
-        }
       },
       contentStyle () {
         return this.options.length
